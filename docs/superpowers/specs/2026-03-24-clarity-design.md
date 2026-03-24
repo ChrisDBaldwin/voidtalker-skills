@@ -53,10 +53,22 @@ The lens is recursive — it applies at every scale. A function, a class, a modu
 
 `clarity` never overrides another skill's process. It adds a question to every phase: *will a reader landing here cold be able to digest this?*
 
+## Implementation Notes
+
+**Frontmatter trigger description:** The SKILL.md will need a `description` field that triggers on code review, refactoring, architecture review, and optionally during code writing. Draft during implementation.
+
+**Enforcement:** "Required during review" is a convention, not a mechanical gate. The skill relies on being invoked by the agent or user during review — it does not inject itself into other skills' processes. If dev-meta is later updated to reference clarity during its review phases, that's a welcome integration, not a requirement.
+
+**Output:** Clarity findings surface as review comments — descriptions of friction experienced by the simulated reader. There is no separate report or artifact. During writing mode, the lens is internal reasoning that shapes the code; it produces no output unless it surfaces a concern.
+
+**Reference files:** None required. The skill is a lens with no templates or checklists. If illustrative examples are useful during implementation, they belong in the SKILL.md itself, not in a references directory.
+
+**Practical unit of analysis:** During a review pass, the unit is whatever the reader lands on — the function, class, or module containing the changed code. The lens is recursive across scales, but the reviewer starts where the diff is and expands outward only if the two questions demand it.
+
 ## Skill Metadata
 
 - **Name:** clarity
-- **Type:** Lens (review required, writing recommended)
+- **Type:** Lens (review required by convention, writing recommended)
 - **Language:** Agnostic
 - **Style:** Principled, not prescriptive — describes friction, not fixes
 - **Trigger:** Any code review, refactoring discussion, or architecture review. Optional during code writing.
