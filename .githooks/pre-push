@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# Pre-push hook: block pushes to main if the version in plugin.json
+# hasn't changed from what's already on origin/main.
+
+remote="$1"
+
+while read local_ref local_oid remote_ref remote_oid; do
+    if [ "$remote_ref" = "refs/heads/main" ]; then
+        # Get the version currently on origin/main
+        remote_version=$(git show origin/main:.claude-plugin/plugin.json 2>/dev/null | grep '"version"' | head -1 | sed 's/.*: *"\(.*\)".*/\1/')
+
+        # Get the version being pushed
+        local_version=$(git show HEAD:.claude-plugin/plugin.json 2>/dev/null | grep '"version"' | head -1 | sed 's/.*: *"\(.*\)".*/\1/')
+
+        if [ -z "$remote_version" ]; then
+            # No remote version yet (first push), allow it
+            exit 0
+        fi
+
+        if [ "$local_version" = "$remote_version" ]; then
+            echo ""
+            echo "ERROR: Version in plugin.json ($local_version) has not been bumped."
+            echo "Bump the version before pushing to main."
+            echo ""
+            exit 1
+        fi
+    fi
+done
+
+exit 0

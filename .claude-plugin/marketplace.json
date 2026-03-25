@@ -11,8 +11,8 @@
         "source": "github",
         "repo": "ChrisDBaldwin/voidtalker-skills"
       },
-      "description": "Portable development skills for autonomous AI-driven workflows — dev lifecycle management and recursive PRD generation",
-      "version": "0.1.0"
+      "description": "Portable development skills for autonomous AI-driven workflows — dev lifecycle management, recursive PRD generation, and code clarity review",
+      "version": "0.2.0"
     }
   ]
 }
