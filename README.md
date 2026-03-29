@@ -28,6 +28,12 @@ Structured questioning for dev-meta Phases 1-3 — lighter than a full brainstor
 
 Use when you have an idea that needs sharpening before it becomes a spec.
 
+### intent
+
+Interview skill that probes until 95% confidence about what you actually want — not what you think you should want. Works at any phase: project kickoff, mid-build, when stuck, before shipping. Catches drift, cargo-culting, and the gap between stated goals and real goals.
+
+Use when you want a reality check, or when something about the current direction feels off.
+
 ### ship
 
 Mechanical Phase 6 of the dev-meta lifecycle — merge worktree, clean artifacts, close beads, push. The last mile after review is done.
