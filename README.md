@@ -34,6 +34,12 @@ Interview skill that probes until 95% confidence about what you actually want �
 
 Use when you want a reality check, or when something about the current direction feels off.
 
+### grounded
+
+Epistemic grounding standard, enforced automatically via a Stop hook. Catches Claude making claims without proof — "this works" without running it, "this fixes the bug" without reproducing it, assertions about code behavior without reading the code. When triggered, the hook blocks the response and redirects Claude to prove its claims before delivering them.
+
+Not invoked manually — runs on every response. The skill defines the standard; the hook enforces it.
+
 ### ship
 
 Mechanical Phase 6 of the dev-meta lifecycle — merge worktree, clean artifacts, close beads, push. The last mile after review is done.

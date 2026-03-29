@@ -1,5 +1,5 @@
 {
   "name": "voidtalker-skills",
-  "version": "0.4.0",
-  "description": "Portable development skills for autonomous AI-driven workflows — dev lifecycle management, recursive PRD generation, code clarity review, problem framing, intent alignment, and shipping"
+  "version": "0.5.0",
+  "description": "Portable development skills for autonomous AI-driven workflows — dev lifecycle management, recursive PRD generation, code clarity review, problem framing, intent alignment, epistemic grounding, and shipping"
 }
