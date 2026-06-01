@@ -16,6 +16,12 @@ Generates PRDs structured for autonomous recursive execution. Produces documents
 
 Use when you want to write a spec and walk away while Claude Code builds it.
 
+### churn
+
+Forges a launch prompt for a fresh, bypass-permissions Claude Code session to autonomously churn through an existing backlog of beads — wiring in the full toolchain: masques (donned cognitive identities), tmux headless-claude fan-out, and the voidtalker skills. The "go" button after work is decomposed into beads.
+
+Use when you want a self-contained prompt to paste into a fresh session and walk away while it grinds the backlog (solo or as a swarm). Pairs with recursive-prd (writes the spec) and ship (lands the result).
+
 ### clarity
 
 Cognitive-load lens for code review and writing. Simulates a reader encountering code for the first time and surfaces friction through two questions: where does the logic actually live, and what do I need to remember right now?
