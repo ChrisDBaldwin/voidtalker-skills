@@ -1,29 +1,4 @@
 {
-  "description": "Epistemic grounding enforcement — catches ungrounded claims before they reach the user",
-  "hooks": {
-    "Stop": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "Review the assistant's pending response for ungrounded epistemic claims — statements about what this specific code does, whether something works, or what will happen, that are not backed by evidence visible in this conversation (tool output, file reads, command results, test runs).\n\nGROUNDED (approve these):\n- Claims backed by tool results already in the conversation (test output, file reads, command output)\n- General programming knowledge not specific to this codebase ('HTTP 404 means not found')\n- Qualified uncertainty ('I expect...', 'this should...', 'I think...', 'likely...')\n- Summaries of tool output that just appeared in the conversation\n- Statements of intent ('I will...', 'let me...', 'next I'll...')\n- Explanations of code that was just read in this conversation\n\nUNGROUNDED (block these):\n- 'This works' or 'this is correct' without having run it\n- 'This fixes the bug' without reproducing the bug and verifying the fix\n- 'This function does X' without having read the function\n- 'The tests pass' without having run the tests\n- Confident assertions about runtime behavior without execution evidence\n- 'This handles edge case X' without demonstrating it\n\nIf ALL claims in the response are grounded or exempt, return 'approve'.\nIf ANY claim is ungrounded, return 'block' and list the specific ungrounded claims so the assistant can prove them before responding.",
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "Review the subagent's pending response for ungrounded epistemic claims — statements about what code does, whether something works, or what will happen, without evidence in the conversation. Subagents are especially prone to asserting without verifying because they operate autonomously. If all claims are backed by tool results, qualified with uncertainty, or are general knowledge, return 'approve'. If any claim asserts specific behavior of this codebase without visible evidence, return 'block' and list the ungrounded claims.",
-            "timeout": 30
-          }
-        ]
-      }
-    ]
-  }
+  "description": "Placeholder — grounded enforcement moved to skill reference only",
+  "hooks": {}
 }
